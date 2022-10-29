@@ -1,0 +1,118 @@
+<app-header></app-header>
+<div class="product-index">
+  <span *ngFor="let post of products"  class="product-container">
+    <span>
+      <div class="details">
+        <img src="{{ post.url }}" class="p-relative pl-40" alt="" />
+
+        <h2 class="full-flex" style="position: relative">{{ post.name }}</h2>
+        <p class="m-0 c-white p-relative full-flex">{{ post.price }}</p>
+        <p class="m-0 c-white p-relative full-flex">{{ post.description }}</p>
+        <div class="">
+          Amount {{ post.amount }}
+          <button (click)="increseAmount(post)" class="btn amount">+</button>
+          <button
+            (click)="decressAmount(post)"
+            *ngIf="post.amount > 0"
+            class="btn amount"
+          >
+            -
+          </button>
+        </div>
+
+        <div class="d">
+          <button
+            class=""
+            id="{{ post.id }}"
+            type="button"
+            (click)="remove(post)"
+            class="btn"
+          >
+            Remove
+          </button>
+        </div>
+      </div>
+    </span>
+  </span>
+  <span class="">
+    <button class="amount btn" (click)="calcAmount()" value="calculate">
+      Press To calculate Total {{ amount }}
+    </button>
+  </span>
+</div>
+<div>
+  <form
+    #form="ngForm"
+    class="form"
+    *ngIf="amount !== 0"
+    (ngSubmit)="onSubmit()"
+  >
+    <span class="check"> Checkout form </span>
+    <div class="user">
+      <span class="heading">Full Name </span>
+      <span
+        ><input
+         
+          class="number-input"
+          type="text"
+          required
+          minlength="5"
+          maxlength="15"
+          appForbiddenName="username"
+          name="username"
+          [(ngModel)]="username"
+          placeholder="Usename"
+          (ngModelChange)="validateName()"
+        
+      />
+
+      <br>
+      <small class="alert">{{notValid}}</small>
+       
+
+
+
+
+    
+     </span>
+  
+     
+      
+      <span class="heading">Address </span>
+      <span>
+        <input
+          class="number-input"
+          type="text"
+          name="password"
+          [(ngModel)]="address"
+          placeholder="Address"
+      /></span>
+      <span class="heading">Credit Card Number </span>
+      <span>
+        <!-- <input
+          class="number-input"
+          type="tel"
+          name="cridet"
+          required
+          maxlength="16"
+          minlength="16"
+          [(ngModel)]="credit"
+          placeholder="digita"
+          (ngModelChange)="validatedigit()"
+      /> -->
+      <input  class="number-input"minlength="19" maxlength="19" name="credit-number"     required  pattern="\d*" placeholder="Card Number" type="tel" [(ngModel)]="credit"
+      placeholder="digita"
+      (ngModelChange)="validatedigit()" />
+      <br>
+      <small class="alert">{{notValidDigit}}</small>
+       
+    </span>
+
+      <span
+        ><button class="btn sub-btn" [disabled]="form.invalid" type="submit">
+          Submit
+        </button></span
+      >
+    </div>
+  </form>
+</div>

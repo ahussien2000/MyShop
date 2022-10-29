@@ -1,0 +1,20 @@
+<app-header></app-header>
+<div class="confirmation-container">
+  <div class="confirmation-items">
+    <div class="confirmation-item">
+      <span class="confirmation-header"> Success </span>
+      <br />
+      <span class=""> Thank you , {{ name }}</span>
+      <br />
+      <span>Your {{ amount }} order is confirmed </span>
+      <br />
+      <span>Please allow 1-3 bussines day(s) for shipping </span>
+      <br />
+      <span>
+        <button type="button" (click)="backtolist()" class="btn">
+          Back to product list
+        </button>
+      </span>
+    </div>
+  </div>
+</div>

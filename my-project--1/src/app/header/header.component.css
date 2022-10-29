@@ -1,0 +1,23 @@
+.Heading {
+    display: block;
+    text-align: center;
+    font-size: 40px;
+    cursor: pointer;
+  }
+  .main-nav {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    right: 18px;
+  }
+  ul {
+    list-style-type: none;
+  }
+  ul li a {
+    text-decoration: none;
+  }
+  .back {
+    background-color: rgb(145, 233, 255);
+    padding: 5px;
+  }

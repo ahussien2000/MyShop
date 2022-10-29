@@ -1,0 +1,32 @@
+<app-header></app-header>
+<div class="product-index">
+  
+  <span *ngFor="let post of products" class="product-container">
+    <span>
+      <img src="{{ post.url }}" class="p-relative pl-40" alt="" />
+      <div class="details">
+        <h2 class="full-flex" style="position: relative">{{ post.name }}</h2>
+        <p class="m-0 c-white p-relative full-flex">{{ post.price }}</p>
+        <p class="m-0 c-white p-relative full-flex">{{ post.description }}</p>
+        <div class="">
+          Amount {{ post.amount }}
+          <button (click)="increseAmount(post)" class="btn amount">+</button>
+          <button (click)="decressAmount(post)" *ngIf="post.amount>0"  class="btn amount">-</button>
+        </div>
+
+        <div class="d">
+          <button
+            class=""
+            id="{{ post }}"
+            (click)="addProduct(post)"
+            type="button"
+            class="btn"
+          >
+            Add To Card
+          </button>
+          <span><a routerLink="/">back to Product Page</a></span>
+        </div>
+      </div>
+    </span>
+  </span>
+</div>

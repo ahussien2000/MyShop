@@ -1,0 +1,64 @@
+.product-index {
+  max-width: 1024px;
+  margin: 100px;
+
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 40px;
+  position: relative;
+  left: 6%;
+}
+
+.product-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+img {
+  width: 300px;
+  height: 300px;
+  border: 1px solid rgb(116 168 227);
+  cursor: pointer;
+}
+.Heading {
+  display: block;
+  text-align: center;
+  font-size: 40px;
+  cursor: pointer;
+}
+.main-nav {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  right: 18px;
+}
+ul {
+  list-style-type: none;
+}
+ul li a {
+  text-decoration: none;
+}
+.back {
+  background-color: rgb(145, 233, 255);
+  padding: 5px;
+}
+.btn {
+  color: white;
+  background-color: rgb(3, 121, 255);
+  padding: 10px;
+  border: none;
+  cursor: pointer;
+  margin: 5px;
+}
+.drop-down {
+  margin: 10px;
+  width: 50%;
+}
+.details {
+  text-align: center;
+  padding: 10px;
+}
+.amount {
+  margin-left: 5px;
+}
